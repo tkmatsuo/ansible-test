@@ -3,7 +3,8 @@
   become: yes
 
   tasks:
-  - name: install latest nginx package
-    apt: pkg=nginx state=latest
-  - name: install latest redis-server package
-    apt: pkg=redis-server state=latest
+  - name: nginx & redis-server
+    apt: name={{ item }} state=latest update_cache=yes
+    with_items:
+      - nginx
+      - redis-server

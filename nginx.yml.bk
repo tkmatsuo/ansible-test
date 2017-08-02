@@ -1,0 +1,9 @@
+---
+- hosts: servers
+  become: yes
+
+  tasks:
+  - name: install latest nginx package
+    apt: pkg=nginx state=latest
+  - name: install latest redis-server package
+    apt: pkg=redis-server state=latest
