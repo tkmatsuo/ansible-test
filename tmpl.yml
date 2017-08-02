@@ -1,0 +1,9 @@
+---
+- hosts: servers
+  become: yes
+  vars:
+    message: Hello, World!
+
+  tasks:
+  - name: put hello file
+    template: src=tmpl.hello.j2 dest=/tmp/hello.txt
