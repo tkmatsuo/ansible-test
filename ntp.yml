@@ -1,0 +1,7 @@
+---
+- hosts: servers
+  become: yes
+
+  tasks:
+  - name: install latest ntp package
+    apt: pkg=ntp state=latest
